@@ -132,10 +132,10 @@ def vigenereDecrypt(chiper):
 
 def getCipherTextFromFile(fileName):
     file=open(fileName,"r")
-    contents=file.readline()
+    cipher_Text=file.readline()
     print("------Lets Start to DeChiper------")
-    print("Cipher Text: "+contents)
-    return contents
+    print("Cipher Text: "+cipher_Text)
+    return cipher_Text
  
 if __name__ == '__main__':
     try:
