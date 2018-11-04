@@ -2,8 +2,6 @@
 	is done by finding the key length and the possible keys
 	using the key the cipher text is decryted using VIGENERE CIPHER
 	
-	There is possibility of having diffrent keys to decipher the text
-
 	Done by RISHIKESH RAM S"""
 
 from itertools import starmap,cycle
@@ -57,8 +55,6 @@ def possibleKeyLength(chiperText):
 			IC +=  indexOfCoincidence(subString)	
 		iCAvg = IC/float(i)
 		pkl[i] = iCAvg
-	
-	predict = 1.73
 	for i  in pkl.copy():
 		if(abs(pkl[i] - 1.73) < 0.20 ):
 			possibleKeyLen.append(i)
@@ -67,9 +63,9 @@ def possibleKeyLength(chiperText):
 
 """split the chiper text for rows in size of given key length ,and transpose them into columns"""
 
-def splitForColumns(chiperText  , colLenght):
+def splitForColumns(chiperText  , colLength):
 	subs = []
-	n = colLenght
+	n = colLength
 	subs = np.array(["".join(chiperText[i:i+n]) for i in range(0, len(chiperText), n)])
 	s =[]
 	preLenght = subs[0]
@@ -86,7 +82,7 @@ def splitForColumns(chiperText  , colLenght):
 	return pieces
 
 
-"""Mthod find the possible key for the key length"""
+"""Method find the possible key for the key length"""
 
 def possibleKey(cols):
 
